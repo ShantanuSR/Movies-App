@@ -98,35 +98,27 @@ namespace MovieAppLibrary
 
         
         
-        public void DisplayMovie(List<Movie> movies)
-        {
-            if (movies.Count == 0)
-            {
-                Console.WriteLine("No movies to display.");
-                return;
-            }
+public void DisplayMovie(List<Movie> movies)
+ {
+     if (movies.Count == 0)
+     {
+         Console.WriteLine("No movies to display.");
+         return;
+     }
 
-            int idWidth = 10;
-            int nameWidth = 30;
-            int genreWidth = 15;
-            int yearWidth = 15;
+     Console.WriteLine("-----------------------------------------------------------");
+     Console.WriteLine($"| {"MovieId",-10}  | {"Movie Name",-10} | {"Genre",-10} | {"Year of Release",10} |");
+     Console.WriteLine("-----------------------------------------------------------");
 
-            Console.WriteLine("+" + new string('-', idWidth) + "+" + new string('-', nameWidth) + "+" + new string('-', genreWidth) + "+" + new string('-', yearWidth) + "+");
-            Console.WriteLine("| {0,-" + idWidth + "} | {1,-" + nameWidth + "} | {2,-" + genreWidth + "} | {3,-" + yearWidth + "} |",
-                              "Movie ID", "Movie Name", "Genre", "Year of Release");
-            Console.WriteLine("+" + new string('-', idWidth) + "+" + new string('-', nameWidth) + "+" + new string('-', genreWidth) + "+" + new string('-', yearWidth) + "+");  // Separator line
 
-            foreach (Movie movie in movies)
-            {
-                Console.WriteLine("| {0,-" + idWidth + "} | {1,-" + nameWidth + "} | {2,-" + genreWidth + "} | {3,-" + yearWidth + "} |",
-                                  movie.MovieId,
-                                  movie.MovieName,
-                                  movie.Genre,
-                                  movie.YearOfRelease);
-            }
+     foreach (Movie movie in movies)
+     {
+         Console.WriteLine($"| {movie.MovieId,-10}  | {movie.MovieName,-10} | {movie.Genre,-10} | {movie.YearOfRelease,10} |");
+         Console.WriteLine("-----------------------------------------------------------");
+     }
 
-            Console.WriteLine("+" + new string('-', idWidth) + "+" + new string('-', nameWidth) + "+" + new string('-', genreWidth) + "+" + new string('-', yearWidth) + "+");
-        }
+
+     }
 
 
 
